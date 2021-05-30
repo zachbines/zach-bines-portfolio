@@ -6,7 +6,99 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
-/*  
-  font-family: 'Josefin Sans', sans-serif;
-  font-family: 'Crimson Text', serif;
-     */
+/*  font-family: 'Lora', serif;
+    font-family: 'Ubuntu', sans-serif; */
+
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    color: rgb(68, 67, 67);
+  }
+
+  img {
+    max-width: 100%;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .wrapper {
+    max-width: 1640px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+  }
+
+  header {
+    min-height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20rem;
+    font-weight: bold;
+    color: rgb(68, 67, 67);
+    width: 63%;
+    line-height: 0.83;
+
+  }
+
+  .last-name {
+    position: relative;
+    z-index: 10;
+    left: 187px;
+  }
+
+  .dot::after {
+    content: '.';
+    position: absolute;
+    color: #e96767;
+    right: -50px;
+    bottom: 25px;
+  }
+
+  .dot::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 60%;
+    width: 75%;
+    top: 50px;
+    right: -28px;
+    border-top: 5px solid rgb(68, 67, 67);
+    border-right: 5px solid  rgb(68, 67, 67);
+    border-radius: 0 50px;
+  }
+
+  .image-container {
+    width: 30%;
+    height: auto;
+    position: relative;
+  }
+
+  .image-container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to top right, rgba(34, 216, 192, 0.301), rgba(216, 101, 34, 0.301));
+    /* z-index: 1; */
+  }
+
+
