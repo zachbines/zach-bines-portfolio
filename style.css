@@ -43,25 +43,36 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   nav {
     font-family: 'Ubuntu', sans-serif;
+    font-size: 3rem;
     display: flex;
     justify-content: space-between;
-    height: 20vh;
+    /* align-items: center; */
+    /* height: 10vh; */
+    padding-top: 10px;
+  }
 
+  nav p {
+    font-size: 8rem;
+    font-weight: 700;
+  }
+
+  nav span {
+    color: #f84747;
   }
 
   header {
-    min-height: 80vh;
+    /* padding-top: 80px; */
+    min-height: 90vh;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    /* border-bottom: 5px solid black; */
-    /* border-radius: 0 0 25px 25px; */
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid black; 
+    border-radius: 0 0 0 25px;
   }
 
   .header-text {
      position: relative;
      width: 63%;
-  
   }
   
   h1, 
@@ -76,14 +87,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     z-index: 1;
   }
 
-  /* h1 {
-    font-size: 19rem;
-    font-weight: bold;
-    color: rgb(68, 67, 67);
-    line-height: 0.83;
-    z-index: 1;
-  } */
-
   .header-text::after {
     content: 'zachbines';
     font-size: 50rem;
@@ -93,7 +96,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     display: block;
     position: absolute;
     bottom: -400px;
-    left: -200px;
+    left: -300px;
     width: 100%;
     z-index: -10;
   }
@@ -101,7 +104,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   .dot {
     position: relative;
     z-index: 10;
-    /* left: 187px; */
   }
 
   .dot::after {
@@ -111,26 +113,28 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     right: -50px;
     bottom: 25px;
   }
-/* 
-  .dot::before {
+
+  /* git border */
+  h1 span::before {
     content: '';
     display: block;
     position: absolute;
     height: 60%;
     width: 75%;
-    top: 50px;
-    right: -28px;
-    border-top: 5px solid rgb(68, 67, 67);
-    border-right: 5px solid  rgb(68, 67, 67);
+    top: 47px;
+    right: -29px;
+    border-top: 5px solid rgb(48, 47, 47);
+    border-right: 5px solid rgb(48, 47, 47);
     border-radius: 0 50px;
-  } */
+  }
 
-  
   .sub-heading {
     font-size: 5rem;
     text-align: right;
     margin: 20px; 
   }
+
+  /* header image */
 
   .image-container {
     width: 30%;
