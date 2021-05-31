@@ -15,6 +15,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -32,47 +33,92 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   a {
     color: inherit;
     text-decoration: none;
+    position: relative;
+    
+  }
+
+  a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px; 
+    background-color: #f84747;
+    border-radius: 50%;
+    right: -8px;
+    bottom: 9px;
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+  
+  a:hover::before,
+  a:focus::before {
+    opacity: 1;
   }
 
   .wrapper {
-    max-width: 1640px;
+    max-width: 1440px;
     width: 80%;
     margin: 0 auto;
+  }
 
+  .logo {
+    font-size: 6.5rem;
+    font-weight: 700;
+  }
+
+  .logo span {
+    font-size: 8.1rem;
+    text-shadow: 1px -1px 0px white;
+    position: relative;
+    left: -7px;
+    top: 1px;
+  }
+
+  .logo .dot::after {
+    font-size: 18rem;
+    text-shadow: -1px 1px 0px white;
+    right: 19px;
+    bottom: 25px;
+    z-index: -1;
   }
 
   nav {
     font-family: 'Ubuntu', sans-serif;
-    font-size: 3rem;
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    /* height: 10vh; */
-    padding-top: 10px;
-  }
-
-  nav p {
-    font-size: 8rem;
-    font-weight: 700;
-  }
-
-  nav span {
-    color: #f84747;
-  }
-
-  header {
-    /* padding-top: 80px; */
-    min-height: 90vh;
+    font-size: 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 5px solid black; 
-    border-radius: 0 0 0 25px;
+    padding-top: 10px;
+  }
+
+  .link-list {
+    display: flex;
+    width: 37%;
+    justify-content: space-between;
+  }
+
+  .link-list li {
+    margin: 5px;
+    text-transform: uppercase;
+  }
+
+  .link-list a {
+    padding: 5px;
+  }
+
+  header {
+    margin-top: 50px;
+    min-height: calc(90vh - 60px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   .header-text {
      position: relative;
      width: 63%;
+     animation: fadeInAnimation 2s ease 1, fromLeft 2s ease 1;
   }
   
   h1, 
@@ -80,13 +126,17 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   h3, 
   h4 {
     font-family: 'Ubuntu', sans-serif;
-    font-size: 19rem;
     font-weight: bold;
     color: rgb(48, 47, 47);
+  }
+
+  h1 {
+    font-size: 19rem;
     line-height: 0.83;
     z-index: 1;
   }
 
+/* water mark name
   .header-text::after {
     content: 'zachbines';
     font-size: 50rem;
@@ -99,7 +149,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     left: -300px;
     width: 100%;
     z-index: -10;
-  }
+  } */
 
   .dot {
     position: relative;
@@ -125,6 +175,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     right: -29px;
     border-top: 5px solid rgb(48, 47, 47);
     border-right: 5px solid rgb(48, 47, 47);
+    border-left: none;
     border-radius: 0 50px;
   }
 
@@ -138,9 +189,11 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .image-container {
     width: 30%;
+    min-width: 260px;
     height: auto;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
+    animation: fadeInAnimation 2s ease 1, fromBottom 2s ease 1;
   }
 
   .image-container::after {
@@ -154,23 +207,52 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   /* about section  */
-  main {
-    border-top: 5px solid black;
-    border-radius: 25px 0;
-  }
   .heading-container {
-     width: 35%;
+    margin-top: 50px;
+    width: 35%;
   }
 
-  .about-section h2 {
-    margin: 50px 0 0px;
-    position: relative;
+  /* for all secondary headings */
+  h2 {
+    font-size: 12rem;
+    line-height: 0.83;
+    /* z-index: 1; */
+  }
+
+  h2 span.dot::after {
+    right: -30px;
+    bottom: 20px;
+  }
+
+  h2.dot::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .about-heading span::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 380%;
+    width: 44%;
+    bottom: 31px;
+    right: -178px;
+    border-bottom: 5px solid rgb(48, 47, 47);
+    border-right: 5px solid rgb(48, 47, 47);
+    border-radius: 0 0 50px 0;
+    /* z-index: -1; */
   }
 
   .about-section .sub-heading {
     position: relative;
     width: 330px;
-    margin: 30px auto;
+    /* margin: 30px auto; */
+  }
+
+/* hor all h3's */
+  h3 {
+    position: relative;
   }
 
   h3::after {
@@ -178,21 +260,22 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     display: block;
     position: absolute;
     height: 30px;
-    width: 110%;
+    width: 105%;
     background-color:#f8474746;
     bottom: 0;
     z-index: -1;
   }
+  /* ---- */
 
   .about-content-container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .about-content-container div,
+  .about-image,
   .bio {
     width: 40%;
     margin: 40px 40px;
@@ -211,8 +294,114 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     margin-bottom: 10px;
   }
 
+  .skills {
+    margin-top: 100px;
+  }
+
+  .skills .heading-container {
+    margin-bottom: 50px;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding-top: 10px;
+  }
+
+  .skills-list li {
+    width: 25%;
+    font-size: 14rem;
+    text-align: center;
+    margin: 20px 0;
+    padding-top: 20px;
+    position: relative;
+  }
+
+  .li1::before, .li3::before, .li5::before, .li7::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: -1px;
+    width: 100%;
+    height: 93%;
+    border-bottom: 5px solid rgb(48, 47, 47);
+    border-left: 5px solid rgb(48, 47, 47);
+    border-radius: 0 0 0 50px;
+    z-index: -1000;
+  }
+  .li2::before, .li4::before, .li6::before, .li8::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 100%;
+    height: 91%;
+    border-top: 5px solid rgb(48, 47, 47);
+    border-left: 5px solid rgb(48, 47, 47);
+    border-radius: 50px 0 0 0;
+    z-index: -1000;
+  }
+
+  .li1::after, 
+  .li3::after, 
+  .li5::after, 
+  .li7::after {
+    font-size: 20rem;
+    bottom: -39px;
+    right: -27px;
+    z-index: 1000;
+  }
+
+  /* top dots */
+  .li2::after, 
+  .li4::after, 
+  .li6::after, 
+  .li8::after {
+    font-size: 20rem;
+    top: -162px;
+    right: -26px;
+    z-index: 1000;
+  }
+
+  i {
+    margin: 10px;
+  }
+
+   
   
   
 
 
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+@keyframes fromLeft {
+  0% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fromBottom {
+  0% {
+    transform: translateY(50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+    z-index: -1;
+  }
+}
