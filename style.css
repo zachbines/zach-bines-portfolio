@@ -108,7 +108,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   header {
-    margin-top: 50px;
+    margin: 50px 0;
     min-height: calc(90vh - 60px);
     display: flex;
     justify-content: space-between;
@@ -135,21 +135,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     line-height: 0.83;
     z-index: 1;
   }
-
-/* water mark name
-  .header-text::after {
-    content: 'zachbines';
-    font-size: 50rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    color: rgba(211, 211, 211, 0.096);
-    display: block;
-    position: absolute;
-    bottom: -400px;
-    left: -300px;
-    width: 100%;
-    z-index: -10;
-  } */
 
   .dot {
     position: relative;
@@ -207,6 +192,11 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   /* about section  */
+  .about-section {
+    padding-top: 50px;
+    margin-bottom: 100px;
+  }
+
   .heading-container {
     margin-top: 50px;
     width: 35%;
@@ -234,14 +224,21 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     content: '';
     display: block;
     position: absolute;
-    height: 380%;
+    height: 460%;
     width: 44%;
     bottom: 31px;
     right: -178px;
     border-bottom: 5px solid rgb(48, 47, 47);
     border-right: 5px solid rgb(48, 47, 47);
     border-radius: 0 0 50px 0;
-    /* z-index: -1; */
+    z-index: -1;
+  }
+
+  .about-heading::after {
+    font-size: 19rem;
+    top: -660px;
+    left: 488px;
+    z-index: 100;
   }
 
   .about-section .sub-heading {
@@ -299,7 +296,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   .skills .heading-container {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   .skills-list {
@@ -307,73 +304,87 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     flex-wrap: wrap;
     margin: 20px 0;
     padding-top: 10px;
+    position: relative;
   }
 
   .skills-list li {
     width: 25%;
     font-size: 14rem;
     text-align: center;
-    margin: 20px 0;
-    padding-top: 20px;
-    position: relative;
+    /* margin: 20px 0; */
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .li1::before, .li3::before, .li5::before, .li7::before {
+  .skills-list::before {
     content: '';
     display: block;
     position: absolute;
-    top: 14px;
-    left: -1px;
-    width: 100%;
-    height: 93%;
-    border-bottom: 5px solid rgb(48, 47, 47);
-    border-left: 5px solid rgb(48, 47, 47);
-    border-radius: 0 0 0 50px;
-    z-index: -1000;
+    top: 218px;
+    left: -250px;
+    width: 130%;
+    height: 5px;
+    background-color: rgb(48, 47, 47);
   }
-  .li2::before, .li4::before, .li6::before, .li8::before {
+
+  .skills-list::after {
+    top: -17px;
+    right: -205px;
+  }
+
+  .li2::before, 
+  .li4::before {
     content: '';
     display: block;
     position: absolute;
     top: 0;
     left: -1px;
     width: 100%;
-    height: 91%;
+    height: 104%;
     border-top: 5px solid rgb(48, 47, 47);
     border-left: 5px solid rgb(48, 47, 47);
     border-radius: 50px 0 0 0;
     z-index: -1000;
   }
 
-  .li1::after, 
-  .li3::after, 
+  .li5::before, 
+  .li7::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0px;
+    width: 100%;
+    height: 99%;
+    border-bottom: 5px solid rgb(48, 47, 47);
+    border-left: 5px solid rgb(48, 47, 47);
+    border-radius: 0 0 0 50px;
+    z-index: -1000;
+  }
+
+  .li2::after, 
+  .li4::after,
+  .li5::after, 
+  .li7::after,
+  .skills-list::after {
+    font-size: 29rem;
+  }
+
+  .li2::after, 
+  .li4::after {
+    top: -235px;
+    right: -37px;
+  }
+
   .li5::after, 
   .li7::after {
-    font-size: 20rem;
-    bottom: -39px;
-    right: -27px;
-    z-index: 1000;
+    bottom: -60px;
+    right: -35px;
   }
 
-  /* top dots */
-  .li2::after, 
-  .li4::after, 
-  .li6::after, 
-  .li8::after {
-    font-size: 20rem;
-    top: -162px;
-    right: -26px;
-    z-index: 1000;
-  }
-
-  i {
-    margin: 10px;
-  }
-
-   
-  
-  
-
+  /* projects section */
 
 
 @keyframes fadeInAnimation {
