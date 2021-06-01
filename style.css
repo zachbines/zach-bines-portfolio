@@ -99,7 +99,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   .link-list li {
-    margin: 5px;
+    margin-left: 20px;
     text-transform: uppercase;
   }
 
@@ -145,8 +145,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     content: '.';
     position: absolute;
     color: #f84747;
-    right: -50px;
-    bottom: 25px;
   }
 
   /* git border */
@@ -164,17 +162,23 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     border-radius: 0 50px;
   }
 
+  h1 span::after {
+    right: -50px;
+    bottom: 25px;
+  }
+
   .sub-heading {
     font-size: 5rem;
     text-align: right;
     margin: 20px; 
+    line-height: 1;
   }
 
   /* header image */
 
   .image-container {
     width: 30%;
-    min-width: 260px;
+    min-width: 290px;
     height: auto;
     position: relative;
     /* z-index: 1; */
@@ -236,7 +240,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .about-heading::after {
     font-size: 19rem;
-    top: -660px;
+    top: -657px;
     left: 488px;
     z-index: 100;
   }
@@ -389,6 +393,93 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   .projects {
     padding-top: 60px;
   }
+
+  .project {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  .flip {
+    flex-direction: row-reverse;
+  }
+
+  .panel {
+    width: calc(50% - 30px);
+    margin: 15px;
+  }
+
+  /* app-preview image container */
+
+  /* general styling for all preview boxes */
+  .app-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* border on left/bottom 1st box */
+  .app1 {
+    /* border-left: 5px solid rgb(48, 47, 47);  */
+    border-bottom: 5px solid rgb(48, 47, 47); 
+    border-radius: 25px 0 0 25px;
+    background-image: linear-gradient(to left, transparent 45%, black);
+  }
+
+  /* border on top of first app */
+  .app1::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    width: 50%;
+    height: 100%;
+    border-top: 5px solid rgb(48, 47, 47); 
+    border-left: 5px solid rgb(48, 47, 47);
+    border-radius: 25px 0 0 25px;
+  }
+
+  /* borders for right side of first app */
+  .app2, 
+  .app4{
+    border: 5px solid rgb(48, 47, 47); 
+    border-left: 0;
+    border-radius: 0 25px 25px 0;
+    background-image: linear-gradient(to right, transparent 40%, black);
+  }
+
+  /* borders for app3 */
+  .app3 {
+    border: 5px solid rgb(48, 47, 47); 
+    border-right: 0;
+    border-radius: 25px 0 0 25px;
+    background-image: linear-gradient(to left, transparent 40%, black);
+  }
+
+  /* putting dots on all boxes */
+  .app-preview::after {
+    font-size: 29rem; 
+    z-index: 10;
+  }
+
+  /* bottom right dots */
+  .app1::after, .app3::after {
+    bottom: -53px;
+    right: -36px;
+  }
+  /* top left */
+  .app2::after, .app4::after {
+    top: -240px;
+    left: -40px;
+  }
+
+  .app-preview img {
+    max-width: 94%;
+    padding: 3% 0;
+    position: relative;
+  }
+
 
 @keyframes fadeInAnimation {
     0% {
