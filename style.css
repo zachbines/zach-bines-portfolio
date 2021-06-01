@@ -94,8 +94,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .link-list {
     display: flex;
-    width: 37%;
-    justify-content: space-between;
+    width: 80%;
+    justify-content: flex-end;
   }
 
   .link-list li {
@@ -293,6 +293,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .skills {
     margin-top: 100px;
+    padding: 50px 0;
   }
 
   .skills .heading-container {
@@ -323,15 +324,15 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     display: block;
     position: absolute;
     top: 218px;
-    left: -250px;
-    width: 130%;
+    /* left: -250px; */
+    width: 101%;
     height: 5px;
     background-color: rgb(48, 47, 47);
   }
 
   .skills-list::after {
     top: -17px;
-    right: -205px;
+    right: -40px;
   }
 
   .li2::before, 
@@ -385,7 +386,9 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   /* projects section */
-
+  .projects {
+    padding-top: 60px;
+  }
 
 @keyframes fadeInAnimation {
     0% {
