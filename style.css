@@ -148,8 +148,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   .scroll::before {
     content: "";
     position: absolute;
-    border-bottom: 2px solid rgb(48, 47, 47);
-    border-left:  2px solid rgb(48, 47, 47);
+    border-bottom: 3px solid rgb(48, 47, 47);
+    border-left:  3px solid rgb(48, 47, 47);
     animation: pulse 2s ease-in-out infinite;
   }
 
@@ -159,15 +159,15 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   .scroll::after {
-    bottom: 45px;
-    right: 190px;
+    right: 0;
+    bottom: 10px;
     height: 50px;
     width: 50px;
   }
 
   .scroll::before {
-    bottom: 60px;
-    right: 200px;
+    right: 10px;
+    bottom: 25px;
     height: 30px;
     width: 30px;
   }
@@ -446,6 +446,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   
   .projects {
     padding-top: 50px;
+    margin-bottom: 50px;
   }
 
   /* container for preivew and description */
@@ -591,12 +592,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* contact section */
 .contact {
-  padding-top: 40px;
+  padding-top: 25px;
 }
 
 .contact-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -604,6 +606,11 @@ form,
 .socials {
   width: calc(50% - 80px);
   margin: 40px;
+}
+
+form {
+  margin-left: 20px;
+  min-width: 500px;
 }
 
 .inputs {
@@ -629,7 +636,6 @@ form,
   right: -57px;
   bottom: -83px;
 }
-
 
 input,
 textarea {
@@ -708,23 +714,27 @@ textarea:focus {
 
 .socials {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .socials li {
-  margin: 0 5px;
+  margin: 10px;
   color: rgb(48, 47, 47); 
   font-size: calc(7rem + 2vw);
   transform: scale(1);
-  /* transition: animation 300ms ease; */
+  transition: all 200ms ease;
 }
 
 .socials li:hover,
 .socials li:focus {
   /* text-shadow: 0 0 5px #f84747; */
   animation: pulse 500ms ease-in-out 2;
+}
+
+.socials li:active {
+  color: #f84747;
 }
 
 .contact button.scroll {
@@ -757,7 +767,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60px;
+  min-height: 100px;
   text-transform: uppercase;
 }
 
