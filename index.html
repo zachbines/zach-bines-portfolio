@@ -9,25 +9,28 @@
   <script src="https://kit.fontawesome.com/4e725b965f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body id="top">
   <div class="wrapper">
     <nav>
       <p class="logo">z<span class="dot">B</span></p>
       <ul class="link-list">
-        <li><a href="#about">about</a></li>
-        <li><a href="#skills">skills</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#contact">contact</a></li>
+        <li><a href="#about" class="nav-link">about</a></li>
+        <li><a href="#skills" class="nav-link">skills</a></li>
+        <li><a href="#projects" class="nav-link">projects</a></li>
+        <li><a href="#contact" class="nav-link">contact</a></li>
       </ul>
     </nav>
     <header>
-      <div class="header-text">
-        <h1>zach <span class="dot">bines</span></h1>
-        <h2 class="sub-heading">{web developer}</h2>
+      <div class="header-content">
+        <div class="header-text">
+          <h1>zach <span class="dot">bines</span></h1>
+          <h2 class="sub-heading">{web developer}</h2>
+        </div>
+        <div class="image-container">
+          <img src="./assets/IMG_3225.jpeg" alt="zach">
+        </div>
       </div>
-      <div class="image-container">
-        <img src="./assets/IMG_3225.jpeg" alt="zach">
-      </div>
+      <button class="scroll" id="scroll-down"></button>
     </header>
      <main>
        <section class="about-section" id="about">
@@ -76,7 +79,8 @@
               Minus, quo beatae.</p>
               <div class="links">
                 <a href="https://zachbines.github.io/zachary-bines-project-one">Live</a>
-              <a href="https://github.com/zachbines/zachary-bines-project-one">Code</a>
+              <a href="https://github.com/zachbines/zachary-bines-project-one"><span>
+                Code</span></a>
             </div>
           </div>
         </div>
@@ -91,7 +95,8 @@
               alias! Minus, quo beatae.</p>
             <div class="links">
               <a href="https://wannawatch.netlify.app/">Live</a>
-              <a href="#">Code</a>
+              <a href="#"><span>
+                Code</span></a>
             </div>
           </div>
         </div>
@@ -106,8 +111,9 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, qui cum omnis aspernatur ipsa nemo esse alias!
               Minus, quo beatae.</p>
             <div class="links">
-              <a href="https://backronymgenerator.netlify.app/">Live</a>
-              <a href="https://github.com/jzom-derulo/backronymGenerator">Code</a>
+              <a href="https://backronymgenerator.netlify.app/">Live</a>   
+              <a href="https://github.com/jzom-derulo/backronymGenerator"><span>
+                Code</span></a>
             </div>
           </div>
         </div>
@@ -122,7 +128,8 @@
               Minus, quo beatae.</p>
             <div class="links">
               <a href="https://zachbines.github.io/seinfeld-app/">Live</a>
-              <a href="https://github.com/zachbines/seinfeld-app">Code</a>
+              <a href="https://github.com/zachbines/seinfeld-app"><span>
+                Code</span></a>
             </div>
           </div>
         </div>
@@ -145,7 +152,7 @@
               <label for="message" class="visually-hidden">What can I do for you?</label>
               <textarea name="message" id="message" placeholder="Tell me your thoughts..."></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit">Send</button>
           </form>
           <ul class="socials">
             <li>
@@ -165,11 +172,13 @@
             </li>
           </ul>
         </div>
+        <button class="scroll" id="scroll-up">back to top</button>
       </section>
      </main>
      <footer>
-       <p>Coded with ❤️ by Zach Bines</p>
+       <p>Coded with <i class="fas fa-heart"></i> by Zach Bines</p>
      </footer>
   </div>
+  <script src="./script.js"></script>
 </body>
 </html> 

@@ -125,13 +125,51 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   .link-list a {
     padding: 5px;
   }
-
+  
   header {
-    margin: 50px 0;
     min-height: calc(90vh - 60px);
+    position: relative;
+  }
+
+  .header-content {
+    margin: 50px 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  .scroll {
+    border: 0;
+    background-color: transparent;
+    display: block;
+  }
+
+  .scroll::after,
+  .scroll::before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid rgb(48, 47, 47);
+    border-left:  2px solid rgb(48, 47, 47);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  header .scroll::after,
+  header .scroll::before {
+    rotate: -45deg;
+  }
+
+  .scroll::after {
+    bottom: 45px;
+    right: 190px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .scroll::before {
+    bottom: 60px;
+    right: 200px;
+    height: 30px;
+    width: 30px;
   }
 
   .header-text {
@@ -193,7 +231,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     animation: fadeInAnimation 2s ease 1, fromBottom 2s ease 1;
   }
 
-  .image-container::after {
+  .image-container::before {
     content: '';
     display: block;
     position: absolute;
@@ -236,7 +274,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     content: '';
     display: block;
     position: absolute;
-    height: 430%;
+    height: 400%;
     width: 44%;
     bottom: 31px;
     right: -178px;
@@ -248,7 +286,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .about-heading::after {
     font-size: 19rem;
-    top: -650px;
+    top: -605px;
     left: 488px;
     z-index: 100;
   }
@@ -416,7 +454,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin: 50px auto;
+    margin: 50px auto 0;
   }
 
   .flip {
@@ -523,12 +561,22 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     margin: 20px 0;
   }
 
+  .links span::before {
+    content: '|';
+    font-size: 3rem;
+    color: rgb(48, 47, 47);
+    position: relative;
+    left: -9px;
+  }
+
   .links a {
+    color: #f84747;
     text-align: center;
     font-size: 2.2rem;
     display: inline-block;
     padding: 5px 10px 5px 0;
     margin: 10px 10px 10px 0;
+    transition: color 200ms ease;
   }
 
   .links a::before {
@@ -536,17 +584,22 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     bottom: 5px;
   }
   
+  .links a:hover,
+  .links a:focus {
+    color: rgb(48, 47, 47);
+  }
 
 /* contact section */
 .contact {
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 .contact-content {
-  width: 85%;
   display: flex;
+  justify-content: space-around;
   margin: 0 auto;
 }
+
 form,
 .socials {
   width: calc(50% - 80px);
@@ -588,7 +641,6 @@ textarea {
 
 input {
   width: calc(50% - 10px);
-
 }
 
 textarea {
@@ -634,21 +686,22 @@ textarea:focus {
   z-index: -1;
 }
 
-button {
+.submit {
   width: 200px;
   height: 50px;
   margin: 30px 0;
   border: 0;
   background-color: rgb(48, 47, 47);
-  color: whitesmoke;
+  color: rgba(255, 255, 255, 0.897);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 1.6rem;
   cursor: pointer;
   transition: all 200ms ease;
 }
 
-button:hover,
-button:focus {
+.submit:hover,
+.submit:focus {
   background-color: #fdcccc;
   color: rgb(48, 47, 47);
 }
@@ -656,31 +709,62 @@ button:focus {
 .socials {
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .socials li {
+  margin: 0 5px;
   color: rgb(48, 47, 47); 
-  transition: all 200ms ease;
-  font-size: 10rem;
+  font-size: calc(7rem + 2vw);
   transform: scale(1);
-  transition: all 100ms ease;
+  /* transition: animation 300ms ease; */
 }
 
 .socials li:hover,
 .socials li:focus {
   /* text-shadow: 0 0 5px #f84747; */
-  animation: pulse 700ms ease-in-out 1;
+  animation: pulse 500ms ease-in-out 2;
+}
+
+.contact button.scroll {
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 0 10px auto;
+
+}
+
+.contact .scroll::after,
+.contact .scroll::before {
+    rotate: 135deg;
+}
+/* big arrow */
+.contact .scroll::after {
+  bottom: 10px;
+  right: 35px;
+  height: 50px;
+  width: 50px;
+}
+  /* little arrow */
+.contact .scroll::before {
+  bottom: 15px;
+  right: 45px;
+  height: 30px;
+  width: 30px;
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100px;
+  min-height: 60px;
+  text-transform: uppercase;
 }
 
-
+footer i {
+  font-size: 2.5rem;
+  color:#f84747;
+}
 
 
 @keyframes fadeInAnimation {
@@ -714,12 +798,12 @@ footer {
 }
 
 @keyframes pulse {
-  0%, 50%, 100%{
+  0%, 100%{
     transform: scale(1);
   }
 
-  25%, 75% {
-    transform: scale(1.1)
+  50% {
+    transform: scale(0.9)
   }
 
 }
