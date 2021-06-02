@@ -23,7 +23,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     font-size: 1.6rem;
     color: rgb(48, 47, 47);
     overflow-x: hidden;
-    /* background-image: linear-gradient(to bottom, white 50%, rgba(168, 216, 206, 0.459)); */
   }
 
   img {
@@ -188,7 +187,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   h1 {
-    font-size: 19rem;
+    /* font-size: 19rem; */
+    font-size: calc(13rem + 5vw);
     line-height: 0.83;
     position: relative;
     z-index: 1;
@@ -224,7 +224,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .image-container {
     width: 30%;
-    min-width: 300px;
+    min-width: 290px;
     height: auto;
     position: relative;
     z-index: 0;
@@ -259,22 +259,12 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     /* z-index: 1; */
   }
 
-  h2 .dot::after {
-    right: -30px;
-    bottom: 20px;
-  }
-
-  /* h2.dot::after {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  } */
-
-  .about-heading span::before {
+  /* the line  */
+  /* .about-heading span::before {
     content: '';
     display: block;
     position: absolute;
-    height: 400%;
+    height: calc(64vh - 3vw);
     width: 44%;
     bottom: 31px;
     right: -178px;
@@ -282,16 +272,18 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     border-right: 5px solid rgb(48, 47, 47);
     border-radius: 0 0 50px 0;
     z-index: -1;
-  }
+  } */
 
-  .about-heading::after {
+  /* top dot */
+  /* .about-heading::after {
     font-size: 19rem;
     top: -605px;
+    top: calc(-55vh - 4vw);
     left: 488px;
     z-index: 100;
-  }
+  } */
 
-  .about-section .sub-heading {
+  main .sub-heading {
     position: relative;
     width: 330px;
     /* margin: 30px auto; */
@@ -315,7 +307,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   /* ---- */
 
   .about-content-container {
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -375,14 +367,14 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     position: absolute;
     top: 218px;
     /* left: -250px; */
-    width: 101%;
+    width: 99%;
     height: 5px;
     background-color: rgb(48, 47, 47);
   }
 
   .skills-list::after {
     top: -17px;
-    right: -40px;
+    right: -20px;
   }
 
   .li2::before, 
@@ -392,7 +384,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     position: absolute;
     top: 0;
     left: -1px;
-    width: 100%;
+    width: 95%;
     height: 104%;
     border-top: 5px solid rgb(48, 47, 47);
     border-left: 5px solid rgb(48, 47, 47);
@@ -426,7 +418,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   .li2::after, 
   .li4::after {
     top: -235px;
-    right: -37px;
+    right: -18px;
   }
 
   .li5::after, 
@@ -464,21 +456,22 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   /* each panel (image or text) */
   .panel {
-    margin: 15px;
+    margin: 20px;
   }
 
   .blurb-container {
-    width: calc(35% - 30px);
+    width: calc(35% - 40px);
   }
 
   /* app-preview image container */
   /* general styling for all preview boxes */
   .app-preview {
-    width: calc(65% - 30px);
+    width: calc(65% - 40px);
+    /* min-width: 511px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 2%;
     background-repeat: no-repeat;
   }
   
@@ -723,7 +716,7 @@ textarea:focus {
 .socials li {
   margin: 10px;
   color: rgb(48, 47, 47); 
-  font-size: calc(7rem + 2vw);
+  font-size: calc(5rem + 4vw);
   transform: scale(1);
   transition: all 200ms ease;
 }
@@ -825,4 +818,41 @@ footer i {
   .wrapper {
     width: 90%;
   }
+
+  .about-content-container {
+    width: 100%;
+  } 
+
+  .about-image,
+  .bio {
+    width: 50%;
+    margin: 20px;
+  }
+
+  .skills-list li {
+    font-size: 10rem;
+    padding: 20px
+  }
+  /* main branch */
+  .skills-list::before {
+    top: 157px;
+  }
+  /* .dot on the end */
+  .skills-list::after {
+    top: -78px;
+  }
+
+  .project {
+    width: 100%;
+  }
+
+  /* contact */
+  
+  .socials {
+    flex-direction: column;
+
+  }
+
 }
+
+/* 800px */
