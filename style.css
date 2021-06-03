@@ -140,7 +140,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   header .scroll {
     margin: 0 auto;
     position: absolute;
-    right: 50%;
+    right: 47%;
   }
 
   .scroll {
@@ -195,8 +195,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   h1 {
-    /* font-size: 19rem; */
-    font-size: calc(15rem + 3vw);
+    font-size: 18rem;
+    /* font-size: calc(15rem + 3vw); */
     line-height: 0.83;
     position: relative;
     z-index: 1;
@@ -217,7 +217,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   h1 .dot::after {
-    right: -10.5%;
+    right: -48px;
     bottom: 25px;
   }
 
@@ -264,32 +264,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   h2 {
     font-size: 12rem;
     line-height: 0.83;
-    /* z-index: 1; */
   }
-
-  /* the line  */
-  /* .about-heading span::before {
-    content: '';
-    display: block;
-    position: absolute;
-    height: calc(64vh - 3vw);
-    width: 44%;
-    bottom: 31px;
-    right: -178px;
-    border-bottom: 5px solid rgb(48, 47, 47);
-    border-right: 5px solid rgb(48, 47, 47);
-    border-radius: 0 0 50px 0;
-    z-index: -1;
-  } */
-
-  /* top dot */
-  /* .about-heading::after {
-    font-size: 19rem;
-    top: -605px;
-    top: calc(-55vh - 4vw);
-    left: 488px;
-    z-index: 100;
-  } */
 
   main .sub-heading {
     position: relative;
@@ -378,7 +353,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     /* left: -250px; */
     width: 99%;
     height: 5px;
-    background-color: rgb(48, 47, 47);
+    background: rgb(48, 47, 47);
   }
 
   .skills-list::after {
@@ -793,16 +768,16 @@ footer i {
 }
 
 
-@keyframes fadeInAnimation {
+/* @keyframes fadeInAnimation {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
      }
-}
+} */
 
-@keyframes fromLeft {
+/* @keyframes fromLeft {
   0% {
     transform: translateX(-50px);
   }
@@ -810,9 +785,9 @@ footer i {
   100% {
     transform: translateX(0px);
   }
-}
+} */
 
-@keyframes fromBottom {
+/* @keyframes fromBottom {
   0% {
     transform: translateY(50px);
   }
@@ -821,7 +796,7 @@ footer i {
     transform: translateY(0px);
     z-index: -1;
   }
-}
+} */
 
 @keyframes pulse {
   0%, 100%{
@@ -854,7 +829,6 @@ footer i {
   }
 
   header .image-container {
-    /* min-width: 40%; */
     margin-right: 20px;
     align-self: flex-end;
     top: -60px;
@@ -897,6 +871,31 @@ footer i {
     padding-right: 25px;
   }
 
+  .app-preview::before,
+  .app-preview::after {
+    font-size: 25rem;
+  }
+
+  .app1::before, .app3::before {
+    top: -207px;
+  }
+  .app1::after, .app3::after {
+    bottom: -48px;
+  }
+
+  .app2::before, .app4::before {
+    bottom: -48px;
+  }
+
+  .app2::after, .app4::after {
+    top: -208px;
+  }
+
+
+
+
+
+
   /* contact */
   
   .socials {
@@ -913,7 +912,7 @@ footer i {
   }
 
   nav {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .link-list a::before {
@@ -933,6 +932,72 @@ footer i {
   .bio {
     width: 100%;
   }
+
+  .skills-list {
+    flex-direction: column;
+    align-content: center;
+    height: 700px;
+    padding-top: 70px;
+  }
+
+  .skills-list li {
+    min-width: 180px;
+    padding: 25px;
+    /* margin: 0 20px; */
+  }
+
+  /* line through middle, and dot  */
+  .skills-list::before {
+    /* make verticle */
+    height: 145%;
+    width: 5px;
+    top: -150px;
+    background-color: none;
+    background: linear-gradient(to bottom, transparent 9%, rgb(48, 47, 47), rgb(48, 47, 47), rgb(48, 47, 47), rgb(48, 47, 47), transparent );
+    /* display: none; */
+  }
+  .skills-list::after {
+    display: none;
+    top: -300px;
+    right: 50vw;
+  }
+
+/* before: branches, after: dots */
+  .li2::before, .li4::before {
+    /* make border bottom, left */
+    /* display: none; */
+    border-top: 0;
+    border-bottom: 5px solid rgb(48, 47, 47);
+    border-radius: 0 0 0 50px;
+    left: -5px;
+    width: 100%;
+    top: -9px;
+  }
+
+   .li2::after, .li4::after {
+     /* display: none; */
+    left: -203px;
+    top: -226px;
+    font-size: 25rem;
+   }
+
+/* before: branches, after: dots */
+  .li5::before, .li7::before {
+    /* display: none; */
+    border-left: 0;
+    border-right: 5px solid rgb(48, 47, 47);
+    border-radius: 0 0 50px 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .li5::after, .li7::after {
+    /* display: none; */
+    font-size: 25rem;
+    bottom: 106px;
+    right: -33px;
+  }
+
 
   /* projects section */
   .project {
@@ -963,5 +1028,8 @@ footer i {
     margin: 10px auto;
   }
 
+}
+
+@media (max-width: 575px) {
 
 }
