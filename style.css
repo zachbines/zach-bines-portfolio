@@ -23,16 +23,19 @@ img {
   max-width: 100%;
 }
 
-a {
+a, 
+.link-list button {
   font-family: 'Ubuntu', sans-serif;
   color: inherit;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.7px;
   position: relative;
 }
 
 .link-list a::before,
-.links a::before {
+.links a::before,
+.link-list button::before {
   content: '';
   display: block;
   position: absolute;
@@ -49,7 +52,9 @@ a {
 .link-list a:hover::before,
 .link-list a:focus::before,
 .links a:hover::before,
-.links a:focus::before {
+.links a:focus::before,
+.link-list button:hover::before, 
+.link-list button:focus::before {
   opacity: 1;
 }
 
@@ -116,6 +121,19 @@ nav {
 
 .link-list a {
   padding: 5px;
+}
+
+.link-list button {
+  border: 0;
+  background: none;
+  bottom: 2px;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.link-list button::before {
+  right: -13px;
+  bottom: 4px;
 }
 
 header {
@@ -584,13 +602,13 @@ h4 span {
   margin: 0 auto 50px;
 }
 
-form,
+.contact form,
 .socials {
   width: calc(50% - 80px);
   margin: 40px;
 }
 
-form {
+.contact form {
   margin-left: 20px;
   min-width: 500px;
   position: relative;
@@ -620,7 +638,7 @@ form {
   bottom: -83px;
 }
 
-form::before {
+.contact form::before {
   content: '';
   position: absolute;
   top: 118px;
@@ -632,7 +650,7 @@ form::before {
   opacity: 0;
 }
 
-form::after {
+.contact form::after {
   font-size: 16rem;
   top: -10px;
   right: -35px;
@@ -1050,7 +1068,7 @@ footer i {
   }
 
   /* contact at 800px */
-  form, .socials {
+  .contact form, .socials {
     width: 80%;
     margin: 20px auto;
     min-width: 0;
@@ -1076,6 +1094,7 @@ footer i {
 
   .link-list{
     display: none;
+    /* maybe position off screen so still accessible */
     /* FIGURE THIS OUT! */
   }
 
@@ -1220,11 +1239,11 @@ footer i {
    }
    
    /* contact at 575px */
-   form, .socials {
+   .contact form, .socials {
      width: 90%;
    }
 
-   form {
+   .contact form {
      margin: 20px auto 20px 10px;
    }
 
@@ -1259,8 +1278,8 @@ footer i {
     bottom: -76px;
   }
 
-  form::before,
-  form::after {
+  .contact form::before,
+  .contact form::after {
     opacity: 1;
   }
 
