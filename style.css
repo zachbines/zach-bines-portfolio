@@ -139,14 +139,16 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   header .scroll {
     margin: 0 auto;
     position: absolute;
-    right: 47%;
+    right: 0;
+    bottom: 55px;
   }
 
   .scroll {
     border: 0;
     background-color: transparent;
     display: block;
-    bottom: 1px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
   }
 
   .scroll::after,
@@ -161,6 +163,16 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   header .scroll::after,
   header .scroll::before {
     rotate: -45deg;
+  }
+
+  header .scroll::after {
+    right: 23px;
+    bottom: -40px;
+  }
+
+  header .scroll::before {
+    right: 32px;
+    bottom: -25px;
   }
 
   .scroll::after {
@@ -596,6 +608,7 @@ form,
 form {
   margin-left: 20px;
   min-width: 500px;
+  position: relative;
 }
 
 .inputs {
@@ -620,6 +633,25 @@ form {
   font-size: 20rem;
   right: -57px;
   bottom: -83px;
+}
+
+form::before {
+    content: '';
+    position: absolute;
+    top: 118px;
+    right: -15px;
+    width: 30px;
+    height: 5px;
+    background-color: rgb(48, 47, 47);
+    z-index: -1;
+    opacity: 0;
+}
+
+form::after {
+  font-size: 16rem;
+  top: -10px;
+  right: -35px;
+  opacity: 0;
 }
 
 input,
@@ -724,8 +756,6 @@ textarea:focus {
 
 .contact button.scroll {
   position: relative;
-  text-transform: uppercase;
-  letter-spacing: 3px;
   margin: 0 0 10px auto;
 
 }
@@ -767,16 +797,16 @@ footer i {
 }
 
 
-/* @keyframes fadeInAnimation {
+@keyframes fadeInAnimation {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
      }
-} */
+}
 
-/* @keyframes fromLeft {
+@keyframes fromLeft {
   0% {
     transform: translateX(-50px);
   }
@@ -784,9 +814,9 @@ footer i {
   100% {
     transform: translateX(0px);
   }
-} */
+}
 
-/* @keyframes fromBottom {
+@keyframes fromBottom {
   0% {
     transform: translateY(50px);
   }
@@ -795,7 +825,7 @@ footer i {
     transform: translateY(0px);
     z-index: -1;
   }
-} */
+}
 
 @keyframes pulse {
   0%, 100%{
@@ -834,6 +864,11 @@ footer i {
     align-self: flex-end;
     top: -60px;
     z-index: -1;
+  }
+
+  header .scroll {
+    bottom: 35%;
+    right: 75%;
   }
 
   .about-content-container {
@@ -1026,6 +1061,7 @@ footer i {
 
 }
 
+
 @media (max-width: 575px) {
 
   .link-list{
@@ -1129,13 +1165,7 @@ footer i {
   }
 
   /* projects at 575px */
-  .project {
-    /* padding: 0 20px 0 0; */
-  }
-  .panel:nth-of-type(5n + 1) {
-
-  }
-
+  
   .app-preview {
     padding: 10px;
   }
@@ -1178,7 +1208,55 @@ footer i {
    }
    
    /* contact at 575px */
-   
+   form, .socials {
+     width: 90%;
+   }
+
+   form {
+     margin: 20px auto 20px 10px;
+   }
+
+   .inputs {
+     flex-wrap: wrap;
+   }
+
+  input {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+   /* re jigging the piping */
+  .full::before {
+    right: -18px;
+    height: 180%;
+  }
+
+  .full::after {
+    right: -13px;
+  }
+
+  .inputs::before {
+    top: 39px;
+    right: -15px;
+    width: 30px;
+  }
+
+  .inputs::after {
+    font-size: 16rem;
+    right: -35px;
+    bottom: -76px;
+  }
+
+  form::before,
+  form::after {
+    opacity: 1;
+  }
+
+ 
+
+  }
+
+
 
     /* ditch arrow down */
 
