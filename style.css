@@ -156,7 +156,11 @@ header .scroll {
 
 header .scroll::after,
 header .scroll::before {
-  rotate: -45deg;
+  /* rotate: -45deg; */
+  transform: rotate(-45deg);
+  animation: pulse-header 1s ease-in-out infinite;
+  -webkit-transform: rotate(-45deg);
+  -webkit-animation: pulse-header 1s ease-in-out infinite;
 }
 
 header .scroll::after {
@@ -210,9 +214,9 @@ h1 {
 h1 span::before {
   content: '';
   position: absolute;
-  height: 60%;
-  width: 75%;
-  top: 21%;
+  height: 100px;
+  width: 360px;
+  bottom: 55px;
   right: -29px;
   border-top: 5px solid rgb(48, 47, 47);
   border-right: 5px solid rgb(48, 47, 47);
@@ -262,7 +266,6 @@ h1 .dot::after {
 
 .heading-container {
   margin-top: 50px;
-  width: 35%;
 }
 
 /* for all secondary headings */
@@ -727,12 +730,14 @@ textarea:focus {
 .contact button.scroll {
   position: relative;
   margin: 0 0 10px auto;
-
 }
 
 .contact .scroll::after,
 .contact .scroll::before {
-  rotate: 135deg;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  animation: pulse-contact 1s ease-in-out infinite;
+  -webkit-animation: pulse-contact 1s ease-in-out infinite;
 }
 /* big arrow */
 .contact .scroll::after {
@@ -799,12 +804,33 @@ footer i {
 @keyframes pulse {
   0%, 100%{
     transform: scale(1);
+
   }
 
   50% {
-    transform: scale(0.9)
+    transform: scale(0.9);
+  }
+}
+@keyframes pulse-header {
+  0%, 100%{
+    transform: scale(1) rotate(-45deg);
+
   }
 
+  50% {
+    transform: scale(0.9) rotate(-45deg);
+  }
+}
+
+@keyframes pulse-contact {
+  0%, 100%{
+    transform: scale(1) rotate(135deg);
+
+  }
+
+  50% {
+    transform: scale(0.9) rotate(135deg);
+  }
 }
 
 /* media queries */
@@ -954,6 +980,7 @@ footer i {
     /* make verticle */
     height: 145%;
     width: 5px;
+    right: 50%;
     top: -150px;
     background-color: none;
     background: linear-gradient(to bottom, transparent 9%, rgb(48, 47, 47), rgb(48, 47, 47), rgb(48, 47, 47), rgb(48, 47, 47), transparent );
@@ -1047,10 +1074,11 @@ footer i {
   }
 
   h1 span::before {
-    height: 53%;
-    width: 72%;
+    height: 65px;
+    width: 200px;
     right: -17px;
     border-radius: 0 25px;
+    bottom: 28px;
   }
 
   h1 .dot::after {
@@ -1081,10 +1109,14 @@ footer i {
     display: none;
   }
     /* for all sections */
-  main .sub-heading{
+  main .sub-heading {
     font-size: 3.5rem;
     min-width: 200px;
     width: 60%;
+  }
+
+  h3::after {
+    height: 15px;
   }
 
   .heading-container {
