@@ -444,13 +444,13 @@ h3::after {
 }
 
 .blurb-container {
-  width: calc(35% - 40px);
+  width: calc(40% - 40px);
 }
 
 /* app-preview image container */
 /* general styling for all preview boxes */
 .app-preview {
-  width: calc(65% - 40px);
+  width: calc(60% - 40px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -527,11 +527,21 @@ h4 span {
 }
 
 .blurb-container i {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin: 5px;
 }
 .blurb-container i:first-of-type {
   margin-left: 0;
+}
+
+.trademark {
+  font-size: 1.6rem;
+}
+
+.teammate {
+  text-transform: none;
+  font-family: inherit;
+  color: #f84747
 }
 
 .links span::before {
@@ -729,7 +739,7 @@ textarea:focus {
 
 .contact button.scroll {
   position: relative;
-  margin: 0 0 10px auto;
+  margin: 0 0 20px auto;
 }
 
 .contact .scroll::after,
@@ -949,6 +959,12 @@ footer i {
     right: -4px;
   }
 
+  header .scroll,
+  header .scroll::before,
+  header .scroll::after {
+    display: none;
+  }
+
   /* about section at 800px */
   .about-content-container {
      flex-wrap: wrap;
@@ -1103,11 +1119,6 @@ footer i {
     font-size: 7rem;
   }
 
-  header .scroll,
-  header .scroll::before,
-  header .scroll::after {
-    display: none;
-  }
     /* for all sections */
   main .sub-heading {
     font-size: 3.5rem;
