@@ -58,6 +58,22 @@ a,
   opacity: 1;
 }
 
+/* for mobile links */
+/* .link-list a::after {
+  content: '';
+  font-size: 1.8rem;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #f84747;
+  top: -40px;
+  right: 45%;
+} */
+
 .wrapper {
   max-width: 1440px;
   width: 80%;
@@ -235,7 +251,7 @@ h1 span::before {
   height: 100px;
   width: 360px;
   bottom: 55px;
-  right: -29px;
+  right: -28px;
   border-top: 5px solid rgb(48, 47, 47);
   border-right: 5px solid rgb(48, 47, 47);
   border-left: none;
@@ -342,6 +358,12 @@ h3::after {
   margin-bottom: 10px;
 }
 
+.bio span.emoji {
+  margin: 0;
+  display: inline;
+  font-size: initial;
+}
+
 .skills {
   margin-top: 100px;
   padding: 50px 0 100px;
@@ -383,7 +405,7 @@ h3::after {
 
 .skills-list::after {
   top: -17px;
-  right: -20px;
+  right: -18px;
 }
 
 .li2::before, 
@@ -627,18 +649,6 @@ h4 span {
   position: relative;
 }
 
-.inputs::before {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 30px;
-  right: -35px;
-  height: 5px;
-  width: 70%;
-  background-color: rgb(48, 47, 47);
-  z-index: -1;
-}
-
 .inputs::after {
   font-size: 20rem;
   right: -57px;
@@ -651,7 +661,7 @@ h4 span {
   top: 118px;
   right: -15px;
   width: 30px;
-  height: 5px;
+  height: 3px;
   background-color: rgb(48, 47, 47);
   z-index: -1;
   opacity: 0;
@@ -670,6 +680,8 @@ textarea {
   background-color: rgb(243, 242, 242);
   border: 0;
   transition: all 1s ease;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 1.2px;
 }
 
 input {
@@ -696,7 +708,7 @@ textarea:focus {
   content: '';
   position: absolute;
   display: block;
-  top: 20%;
+  top: 46px;
   right: -35px;
   height: 5px;
   width: 40px;
@@ -712,8 +724,8 @@ textarea:focus {
   right: -35px;
   width: 76%;
   height: 137%;
-  border-bottom: 5px solid rgb(48, 47, 47);
-  border-right: 5px solid rgb(48, 47, 47);
+  border: 5px solid rgb(48, 47, 47);
+  border-left: 0;
   border-radius: 0 0 25px;
   z-index: -1;
 }
@@ -755,7 +767,7 @@ textarea:focus {
 
 .socials li:hover,
 .socials li:focus {
-  animation: pulse 500ms ease-in-out 2;
+  animation: pulse 300ms ease-in-out 1;
 }
 
 .socials li:active {
@@ -846,6 +858,7 @@ footer i {
     transform: scale(0.9);
   }
 }
+
 @keyframes pulse-header {
   0%, 100%{
     transform: scale(1) rotate(-45deg);
@@ -874,6 +887,11 @@ footer i {
   .wrapper {
     width: 90%;
   }
+
+  nav {
+    font-size: 2rem;
+  }
+
 
   .header-content {
     flex-direction: column;
@@ -975,13 +993,22 @@ footer i {
   }
 
   nav {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
-  .link-list a::before {
+  .link-list li {
+    margin-left: 10px;
+  }
+
+  .link-list a::before,
+  .link-list button::before {
     height: 7px;
     width: 7px;
     right: -4px;
+  }
+
+  .link-list button::before {
+    right: -8px;
   }
 
   header .scroll,
@@ -1099,10 +1126,16 @@ footer i {
 
 @media (max-width: 575px) {
 
-  .link-list{
+  .link-list {
+    /* position: absolute;  */
+    /* top: 50px; */
     display: none;
     /* maybe position off screen so still accessible */
     /* FIGURE THIS OUT! */
+  }
+
+  .link-list form {
+    display: none;
   }
 
   header {
@@ -1110,17 +1143,18 @@ footer i {
   }
 
   h1 {
-    font-size: calc(9rem + 4vw);
+    font-size: 11rem;
     text-align: center;
     margin-right: 20px;
   }
 
   h1 span::before {
     height: 65px;
-    width: 200px;
-    right: -17px;
+    width: 201px;
+    right: -16px;
     border-radius: 0 25px;
     bottom: 28px;
+    border-width: 3px;
   }
 
   h1 .dot::after {
@@ -1206,6 +1240,7 @@ footer i {
   /* projects at 575px */
   .app-preview {
     padding: 10px;
+    border-width: 3px;
   }
 
   .app1, .app3 {
@@ -1226,7 +1261,7 @@ footer i {
 
   /* top dots app 1 amd 3 */
   .app1::before, .app3::before {
-    top: -159px;
+    top: -156px;
     right: -31px;
   }
 
@@ -1236,13 +1271,17 @@ footer i {
    }
 
    .app2::after, .app4::after {
-     top: -159px;
+     top: -156px;
      left: -31px;
    }
 
    .app2::before, .app4::before {
      bottom: -37px;
      left: -31px;
+   }
+
+   .blurb-container p {
+     font-size: 1.8rem;
    }
    
    /* contact at 575px */
@@ -1266,17 +1305,13 @@ footer i {
    /* re jigging the piping */
   .full::before {
     right: -18px;
-    height: 180%;
+    height: 396px;
+    border-width: 3px;
   }
 
   .full::after {
     right: -13px;
-  }
-
-  .inputs::before {
-    top: 39px;
-    right: -15px;
-    width: 30px;
+    height: 3px;
   }
 
   .inputs::after {
