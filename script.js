@@ -20,5 +20,3 @@ scrollUpButton.addEventListener('click', () => {
   });
   
 })
-
-// on scroll 

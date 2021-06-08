@@ -559,7 +559,14 @@ h4 span {
 .teammate {
   text-transform: none;
   font-family: inherit;
-  color: #f84747
+  color: #f84747;
+  text-decoration: underline;
+  transition: all 200ms ease;
+}
+
+.teammate:hover,
+.teammate:focus {
+  color: rgb(48, 47, 47);
 }
 
 .links span::before {
