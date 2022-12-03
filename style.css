@@ -316,6 +316,8 @@ img {
   max-width: 100%;
 }
 
+.noscroll { overflow: hidden; }
+
 a,
 .link-list button {
   font-family: "Ubuntu", sans-serif;
@@ -445,24 +447,53 @@ nav {
   bottom: 4px;
 }
 
+/* hamburger menu */
+.burger-menu {
+  background: none;
+  border: none;
+  display: none;
+}
+
+.burger-menu span:after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: black;
+  margin: 10px 0;
+  transition: all 200ms ease-out;
+}
+
+.burger-menu span.burger {
+  position: relative;
+  opacity: 1;
+  right: 0;
+  transition: all 500ms cubic-bezier(.56,-0.53,.51,1.48); 
+}
 header {
-  min-height: calc(90vh - 60px);
+  /* min-height: calc(90vh - 60px); */
   position: relative;
 }
 
 .header-content {
-  margin: 50px 0;
+  margin: 50px 0 60px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
 header .scroll {
-  margin: 0 auto;
-  position: absolute;
+  margin: 0 0 0 auto;
+  position: relative;
   right: 0;
-  bottom: 55px;
+  bottom: 50px;
   text-shadow: 0 0 10px whitesmoke;
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out forwards 1s;
+  -webkit-animation: fadeInAnimation 1s ease-in-out forwards 1s;
+  animation-iteration-count: 1;
 }
 
 .scroll {
@@ -598,7 +629,7 @@ h1 .dot::after {
 /* about section  */
 .about-section {
   padding-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .heading-container {
@@ -668,8 +699,8 @@ h3::after {
 }
 
 .skills {
-  margin-top: 100px;
-  padding: 50px 0 100px;
+  margin-bottom: 50px;
+  padding: 50px 0 0px;
 }
 
 .heading-container {
@@ -968,7 +999,7 @@ h4 span {
 
 /* contact section */
 .contact {
-  padding-top: 25px;
+  padding-top: 50px;
 }
 
 .contact-content {
@@ -1007,7 +1038,7 @@ h4 span {
   position: absolute;
   top: 118px;
   right: -15px;
-  width: 30px;
+  width: 90%;
   height: 3px;
   background-color: rgb(48, 47, 47);
   z-index: -1;
@@ -1240,6 +1271,7 @@ footer i {
 
   .header-content {
     flex-direction: column;
+    margin-bottom: 0;
   }
 
   .header-text {
@@ -1260,7 +1292,13 @@ footer i {
   }
 
   header .scroll {
-    left: 0;
+    margin-right: 20px;
+  }
+
+  .about-section,
+  .skills,
+  .projects {
+    margin-bottom: 0;
   }
 
   .about-content-container {
@@ -1504,15 +1542,65 @@ footer i {
 
 @media (max-width: 575px) {
   .link-list {
-    /* position: absolute;  */
-    /* top: 50px; */
     display: none;
-    /* maybe position off screen so still accessible */
-    /* FIGURE THIS OUT! */
+    opacity: 0;
+    transition: all 300ms ease;
   }
 
+  .link-list.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute; 
+    width: 100%;
+    top: 50%;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+  }
+
+  .link-list.blur {
+    /* background: rgb(255,255,255); */
+    background-image: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 81%);
+    backdrop-filter: blur(10px);
+    opacity: 1;
+  }
+
+  .link-list.active li {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+  
+/* 
   .link-list form {
     display: none;
+  } */
+
+  .burger-menu {
+    display: block;
+    position: relative;
+    z-index: 1100;
+  }
+
+  .burger-menu.active {
+    position: fixed;
+    right: 14px
+  }
+
+  .burger-menu.active span.bun:first-child:after {
+    transform: rotate(45deg);
+    top: 11px;
+  }
+  .burger-menu.active span.bun:last-child:after {
+    transform: rotate(-45deg);
+    top: -13px;
+  }
+  .burger-menu.active span.burger {
+    right: -200%;
   }
 
   header {
@@ -1631,6 +1719,11 @@ footer i {
   }
 
   /* projects at 575px */
+
+  .projects {
+    margin-top: 50px;
+  }
+
   .app-preview {
     padding: 10px;
     border-width: 3px;
