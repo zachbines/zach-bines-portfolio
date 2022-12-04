@@ -472,6 +472,7 @@ nav {
   right: 0;
   transition: all 500ms cubic-bezier(.56,-0.53,.51,1.48); 
 }
+
 header {
   /* min-height: calc(90vh - 60px); */
   position: relative;
@@ -1601,7 +1602,7 @@ footer i {
     top: -13px;
   }
   .burger-menu.active span.burger {
-    right: -200%;
+    right: -250%;
   }
 
   header {
