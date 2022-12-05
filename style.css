@@ -1546,10 +1546,10 @@ footer i {
 
    nav {
     font-size: 2.5rem;
-    font-weight: 600;
   }
   
-  nav button[type=submit] {
+  .link-list a,
+  .link-list button[type=submit] {
     font-weight: 600;
   }
 
