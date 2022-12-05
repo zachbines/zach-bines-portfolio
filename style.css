@@ -321,7 +321,8 @@ img {
 a,
 .link-list button {
   font-family: "Ubuntu", sans-serif;
-  color: inherit;
+  color: rgb(48, 47, 47);
+  font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.7px;
