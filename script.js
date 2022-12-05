@@ -60,14 +60,12 @@ function checkForMobile() {
 }
 
 function revertNav() {
-  [hamburgerMenu, nav].forEach((elem) => {
-    setTimeout(() => {
-      elem.classList.remove('active');  
-    }, "500")
-
-  })
+  hamburgerMenu.classList.remove('active'); 
   nav.classList.remove('blur');
   body.classList.remove('noscroll');
+  setTimeout(() => {
+    nav.classList.remove('active');  
+  }, "500")
 }
 
 window.onresize = checkForMobile;

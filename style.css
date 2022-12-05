@@ -1542,6 +1542,16 @@ footer i {
 }
 
 @media (max-width: 575px) {
+
+   nav {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  
+  nav button[type=submit] {
+    font-weight: 600;
+  }
+
   .link-list {
     display: none;
     opacity: 0;
