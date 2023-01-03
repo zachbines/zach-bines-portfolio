@@ -318,7 +318,7 @@ img {
 
 .noscroll { overflow: hidden; }
 
-a,
+a:not(p a),
 .link-list button {
   font-family: "Ubuntu", sans-serif;
   color: rgb(48, 47, 47);
@@ -958,7 +958,7 @@ h4 span {
   font-size: 1.6rem;
 }
 
-.teammate {
+.teammate, p a {
   text-transform: none;
   font-family: inherit;
   color: #f84747;
@@ -967,7 +967,9 @@ h4 span {
 }
 
 .teammate:hover,
-.teammate:focus {
+.teammate:focus,
+p a:hover,
+p a:focus {
   color: rgb(48, 47, 47);
 }
 
