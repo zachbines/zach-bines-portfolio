@@ -372,15 +372,15 @@ a:not(p a),
 .link-list a::before,
 .links a::before,
 .link-list button::before {
-  content: "";
+  content: url(./assets/First\ Quarter.svg);
   display: block;
   position: absolute;
-  height: 10px;
-  width: 10px;
-  background-color: #f84747;
-  border-radius: 50%;
-  right: -8px;
-  bottom: 9px;
+  /* height: 10px; */
+  width: 16px;
+  /* background-color: #f84747;
+    border-radius: 50%; */
+  right: -10px;
+  bottom: 3px;
   opacity: 0;
   transition: opacity 300ms ease;
 }
@@ -436,10 +436,20 @@ a:not(p a),
 
 .dot::after,
 .app-preview::before {
-  content: ".";
+  content: url("./assets/First\ Quarter.svg");
   position: absolute;
-  color: #f84747;
+  /* color: #f84747; */
+  display: inline-block;
+  width: 60px;
   z-index: 10;
+}
+
+@media (max-width: 575px) {
+
+  .dot::after,
+  .app-preview::before {
+    width: 40px;
+  }
 }
 
 /* ----- */
@@ -447,9 +457,10 @@ a:not(p a),
 .logo .dot::after {
   font-size: 18rem;
   text-shadow: -1px 1px 0px white;
-  right: 19px;
-  bottom: 25px;
+  right: 7px;
+  bottom: -1px;
   z-index: -1;
+  width: 80px !important;
 }
 
 nav {
@@ -484,8 +495,8 @@ nav {
 }
 
 .link-list button::before {
-  right: -13px;
-  bottom: 4px;
+  right: -15px;
+  bottom: -4px;
 }
 
 /* hamburger menu */
@@ -632,8 +643,19 @@ h1 span::before {
 }
 
 h1 .dot::after {
-  right: -48px;
-  bottom: 25px;
+  right: -55px;
+  bottom: 11px;
+}
+
+h2 span.dot:after {
+  bottom: 5px;
+}
+
+@media (max-width: 575px) {
+  h2 span.dot:after {
+    bottom: 0px;
+    right: -34px;
+  }
 }
 
 .sub-heading {
@@ -791,7 +813,7 @@ h3::after {
 }
 
 .skills-list::after {
-  top: -17px;
+  top: -2px;
   right: -20px;
 }
 
@@ -838,7 +860,7 @@ h3::after {
 
 .li2::after,
 .li4::after {
-  top: -235px;
+  top: -219px;
   right: -18px;
 }
 
@@ -847,14 +869,14 @@ h3::after {
 .li11::after,
 .li12::after,
 .li13::after {
-  bottom: -60px;
+  bottom: -77px;
   right: -35px;
 }
 
 .li11::after,
 .li12::after,
 .li13::after {
-  bottom: -53px;
+  bottom: -70px;
 }
 
 li.solo {
@@ -955,35 +977,43 @@ li i.shopify::after {
 /* top right dots */
 .app1::before,
 .app3::before {
-  top: -240px;
+  top: -225px;
   right: -36px;
 }
 
 /* bottom right dots */
 .app1::after,
 .app3::after {
-  bottom: -55px;
+  bottom: -69px;
   right: -36px;
 }
 
 /* top left dots */
 .app2::after,
 .app4::after {
-  top: -240px;
+  top: -225px;
   left: -36px;
 }
 
 /* bottom left dots*/
 .app2::before,
 .app4::before {
-  bottom: -55px;
+  bottom: -71px;
   left: -36px;
 }
 
 .app-preview img {
-  /* max-width: 94%; */
-  /* padding: 3% 0; */
   position: relative;
+}
+
+.app1 img,
+.app3 img {
+  box-shadow: 14px 0px 16px -4px rgba(0, 0, 0, 0.5)
+}
+
+.app2 img,
+.app4 img {
+  box-shadow: -14px 0px 16px -4px rgba(0, 0, 0, 0.5)
 }
 
 h4 {
@@ -1043,14 +1073,18 @@ p a:focus {
   text-align: center;
   font-size: 2.2rem;
   display: inline-block;
-  padding: 5px 10px 5px 0;
+  padding: 5px 15px 5px 0;
   margin: 10px 10px 10px 0;
   transition: color 200ms ease;
 }
 
+.links a:first-child {
+  border-right: 3px solid black;
+}
+
 .links a::before {
-  right: -3px;
-  bottom: 5px;
+  right: 0px;
+  bottom: 0px;
 }
 
 .links a:hover,
@@ -1090,8 +1124,8 @@ p a:focus {
 
 .inputs::after {
   font-size: 20rem;
-  right: -57px;
-  bottom: -83px;
+  right: -62px;
+  bottom: -105px;
 }
 
 .contact form::before {
@@ -1108,8 +1142,8 @@ p a:focus {
 
 .contact form::after {
   font-size: 16rem;
-  top: -10px;
-  right: -35px;
+  top: 0px;
+  right: -36px;
   opacity: 0;
 }
 
@@ -1392,7 +1426,8 @@ footer i {
 
   /* .dot on the end */
   .skills-list::after {
-    top: -78px;
+    top: -64px;
+
   }
 
   li i.shopify::after {
@@ -1425,22 +1460,22 @@ footer i {
 
   .app1::before,
   .app3::before {
-    top: -207px;
+    top: -190px;
   }
 
   .app1::after,
   .app3::after {
-    bottom: -48px;
+    bottom: -65px;
   }
 
   .app2::before,
   .app4::before {
-    bottom: -48px;
+    bottom: -65px;
   }
 
   .app2::after,
   .app4::after {
-    top: -208px;
+    top: -190px;
   }
 
   /* contact */
@@ -1472,13 +1507,13 @@ footer i {
 
   .link-list a::before,
   .link-list button::before {
-    height: 7px;
-    width: 7px;
-    right: -4px;
+    /* height: 7px; */
+    width: 15px;
+    right: -8px;
   }
 
   .link-list button::before {
-    right: -8px;
+    right: -14px;
   }
 
   header .scroll,
@@ -1564,8 +1599,9 @@ footer i {
 
   .li2::after,
   .li4::after {
-    left: -204px;
-    top: -226px;
+    right: unset;
+    left: -33px;
+    top: -209px;
     font-size: 25rem;
   }
 
@@ -1582,8 +1618,8 @@ footer i {
   .li5::after,
   .li7::after {
     font-size: 25rem;
-    bottom: 106px;
-    right: -33px;
+    bottom: 92px;
+    right: -32px;
   }
 
   /* projects section */
@@ -1705,7 +1741,7 @@ footer i {
 
   h1 span::before {
     height: 65px;
-    width: 201px;
+    width: 202px;
     right: -16px;
     border-radius: 0 25px;
     bottom: 28px;
@@ -1713,8 +1749,8 @@ footer i {
   }
 
   h1 .dot::after {
-    right: -27px;
-    bottom: 15px;
+    right: -34px;
+    bottom: 7px;
   }
 
   header .sub-heading {
@@ -1798,13 +1834,13 @@ footer i {
 
   .li2::after,
   .li4::after {
-    top: -181px;
-    left: -153px;
+    top: -170px;
+    left: -22px;
   }
 
   .li5::after,
   .li7::after {
-    right: -25px;
+    right: -21px;
   }
 
   /* projects at 575px */
@@ -1838,26 +1874,26 @@ footer i {
   /* top dots app 1 amd 3 */
   .app1::before,
   .app3::before {
-    top: -156px;
-    right: -31px;
+    top: -147px;
+    right: -29px;
   }
 
   .app1::after,
   .app3::after {
-    bottom: -37px;
-    right: -31px;
+    bottom: -46px;
+    right: -29px;
   }
 
   .app2::after,
   .app4::after {
-    top: -156px;
-    left: -31px;
+    top: -146px;
+    left: -29px;
   }
 
   .app2::before,
   .app4::before {
-    bottom: -37px;
-    left: -31px;
+    bottom: -47px;
+    left: -29px;
   }
 
   .blurb-container p {
@@ -1897,8 +1933,8 @@ footer i {
 
   .inputs::after {
     font-size: 16rem;
-    right: -35px;
-    bottom: -76px;
+    right: -36px;
+    bottom: -89px;
   }
 
   .contact form::before,
